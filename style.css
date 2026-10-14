@@ -1,0 +1,367 @@
+/* =========================================
+   GLOBAL THEME
+   ========================================= */
+:root {
+  --bg-dark-obsidian: #0b0707;
+  --bg-dark-maroon: #180d0e;
+  --primary-crimson: #c21d2e;
+  --primary-glow: #e62237;
+  --border-muted: #2d1618;
+
+  --text-pure: #ffffff;
+  --text-gray-muted: #a19596;
+
+  --radius-standard: 6px;
+  --speed-standard: 0.25s ease-in-out;
+}
+
+/* =========================================
+   BASE STYLES
+   ========================================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  min-height: 100%;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, sans-serif;
+
+  background-color: var(--bg-dark-obsidian);
+
+  /* Full-page background image */
+  background-image:
+    linear-gradient(
+      rgba(11, 7, 7, 0.55),
+      rgba(11, 7, 7, 0.75)
+    ),
+    url("Demon-Slayer_-Kimetsu-no-Yaiba-Infinity-Castle-Theatrical-Date-Poster-US-e1741194118916.webp");
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
+  color: var(--text-pure);
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+/* =========================================
+   NAVIGATION BAR
+   ========================================= */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 1.2rem 6%;
+
+  background-color: rgba(11, 7, 7, 0.88);
+  border-bottom: 1px solid var(--border-muted);
+
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  backdrop-filter: blur(12px);
+}
+
+.nav-logo a {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--text-pure);
+  text-decoration: none;
+  letter-spacing: -0.5px;
+}
+
+.nav-logo a span {
+  color: var(--primary-crimson);
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2.2rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--text-gray-muted);
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: var(--speed-standard);
+  position: relative;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--primary-glow);
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -6px;
+  left: 0;
+
+  background-color: var(--primary-glow);
+  transition: var(--speed-standard);
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+/* =========================================
+   BUTTON STYLES
+   ========================================= */
+.btn-cta {
+  text-decoration: none;
+  border: 1px solid var(--primary-crimson);
+  color: var(--primary-glow);
+
+  padding: 0.5rem 1.2rem;
+  border-radius: var(--radius-standard);
+
+  font-size: 0.9rem;
+  font-weight: 600;
+
+  transition: var(--speed-standard);
+}
+
+.btn-cta:hover {
+  background-color: var(--primary-crimson);
+  color: var(--text-pure);
+  box-shadow: 0 0 15px rgba(194, 29, 46, 0.3);
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.8rem 1.8rem;
+
+  font-size: 0.95rem;
+  font-weight: 600;
+
+  border-radius: var(--radius-standard);
+  text-decoration: none;
+  transition: var(--speed-standard);
+}
+
+.btn-primary {
+  background-color: var(--primary-crimson);
+  color: var(--text-pure);
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-glow);
+  box-shadow: 0 0 20px rgba(230, 34, 55, 0.4);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--text-pure);
+  border: 1px solid var(--border-muted);
+}
+
+.btn-secondary:hover {
+  background-color: rgba(255, 255, 255, 0.03);
+  border-color: var(--text-gray-muted);
+}
+
+/* =========================================
+   HERO SECTION
+   ========================================= */
+.hero-section {
+  background: linear-gradient(
+    rgba(11, 7, 7, 0.30),
+    rgba(11, 7, 7, 0.50)
+  );
+
+  min-height: 365px;
+  padding: 7rem 2rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.hero-container {
+  max-width: 750px;
+}
+
+.hero-title {
+  font-size: 3.2rem;
+  letter-spacing: -1px;
+  margin: 1.5rem 0;
+
+  color: var(--text-pure);
+
+  text-shadow: 0 0 20px rgba(230, 34, 55, 0.35);
+}
+
+.hero-subtitle {
+  font-size: 1.15rem;
+  color: #d0c3c4;
+  margin-bottom: 2.5rem;
+}
+
+/* =========================================
+   FEATURES SECTION
+   ========================================= */
+.features-section {
+  background-color: rgba(24, 13, 14, 0.90);
+
+  border-top: 1px solid var(--border-muted);
+
+  padding: 6rem 2rem;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 2rem;
+  margin-bottom: 0.8rem;
+}
+
+.section-subtitle {
+  font-size: 1rem;
+  color: var(--text-gray-muted);
+
+  max-width: 900px;
+  margin: 0 auto 4rem auto;
+
+  line-height: 1.9;
+  text-align: justify;
+}
+
+/* =========================================
+   FEATURE GRID
+   ========================================= */
+.features-grid {
+  max-width: 1100px;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(280px, 1fr)
+  );
+
+  gap: 2rem;
+}
+
+.feature-card {
+  background-color: var(--bg-dark-obsidian);
+
+  padding: 2.5rem 2rem;
+  border-radius: var(--radius-standard);
+
+  border: 1px solid var(--border-muted);
+  text-align: left;
+
+  transition: var(--speed-standard);
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--primary-crimson);
+
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+}
+
+.feature-icon {
+  font-size: 1.8rem;
+  margin-bottom: 1.2rem;
+}
+
+.feature-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.75rem;
+  color: var(--text-pure);
+}
+
+.feature-card p {
+  color: var(--text-gray-muted);
+  font-size: 0.9rem;
+}
+
+/* =========================================
+   FOOTER
+   ========================================= */
+.site-footer {
+  background-color: rgba(15, 15, 15, 0.90);
+
+  color: #888888;
+  text-align: center;
+
+  padding: 20px 30px;
+  font-size: 13px;
+
+  border-top: 1px solid #8b0000;
+  margin-top: 50px;
+}
+
+.site-footer p {
+  margin: 0;
+  font-family: sans-serif;
+  letter-spacing: 0.5px;
+}
+
+.site-footer span {
+  color: #c21d2e;
+  font-weight: bold;
+}
+
+/* =========================================
+   RESPONSIVE DESIGN
+   ========================================= */
+@media (max-width: 640px) {
+  .hero-section {
+    min-height: 300px;
+    padding: 5rem 1.5rem;
+  }
+
+  .hero-title {
+    font-size: 2.3rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+  }
+
+  .navbar {
+    padding: 1rem 4%;
+  }
+
+  .nav-logo a {
+    font-size: 1.1rem;
+  }
+
+  .nav-links {
+    gap: 1rem;
+  }
+
+  .nav-links a {
+    font-size: 0.8rem;
+  }
+
+  .features-section {
+    padding: 4rem 1.2rem;
+  }
+
+  .section-subtitle {
+    text-align: left;
+  }
+}
